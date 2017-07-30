@@ -18,24 +18,24 @@
     <script src="js/index.js"></script>
     <!-- Initialize Swiper -->
     <script>
-    (function(doc, win) {
-        var docEl = doc.documentElement,
-            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-            recalc = function() {
-                var clientWidth = docEl.clientWidth;
-                if (!clientWidth) return;
-                if (clientWidth <= 320) {
-                    docEl.style.fontSize = '42.666666666px';
-                } else if (clientWidth >= 750) {
-                    docEl.style.fontSize = '100px';
-                } else {
-                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
-                }
-            };
-        if (!doc.addEventListener) return;
-        win.addEventListener(resizeEvt, recalc, false);
-        doc.addEventListener('DOMContentLoaded', recalc, false);
-    })(document, window);
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if (clientWidth <= 320) {
+                        docEl.style.fontSize = '42.666666666px';
+                    } else if (clientWidth >= 750) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
     </script>
 </head>
 
@@ -50,7 +50,7 @@
                 </div>
                 <div class="p"><img src="images/q1.png" alt=""></div>
                 <div class="answerbg">
-                    <div class="answer answer1">
+                    <div class="answer answer1 one" id="age">
                         <button>A&nbsp;&nbsp;&nbsp;<span>70后</span>
                             <div></div>
                         </button>
@@ -75,7 +75,7 @@
                     <span class="ani" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0.1s">2</span>
                 </div>
                 <div class="answerbg">
-                    <div class="answer answer2">
+                    <div class="answer answer2 one" id="sex">
                         <div class="boy">
                             <img src="images/boy.png" style="margin-left: -0.1rem" class="ani" alt="" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
                         </div>
@@ -99,7 +99,7 @@
                     <span class="ani" alt="" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.1s">3</span>
                 </div>
                 <div class="answerbg">
-                    <div class="answer answer3">
+                    <div class="answer answer3 one" id="way">
                         <button>A&nbsp;&nbsp;&nbsp;<span>公共交通</span>
                             <div></div>
                         </button>
@@ -123,7 +123,7 @@
                     <span class="ani" alt="" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0.1s">4</span>
                 </div>
                 <div class="answerbg">
-                    <div class="answer answer4" style="margin-top: 1.2rem">
+                    <div class="answer answer4 two" id="changsuo" style="margin-top: 1.2rem">
                         <button>A&nbsp;&nbsp;&nbsp;<span>宅在家</span>
                             <div></div>
                         </button>
@@ -150,7 +150,7 @@
                     <span class="ani" alt="" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.1s">5</span>
                 </div>
                 <div class="answerbg">
-                    <div class="answer answer5" style="margin-top: 1.2rem">
+                    <div class="answer answer5 two" id="qudao" style="margin-top: 1.2rem">
                         <button>A&nbsp;&nbsp;&nbsp;<span>海淘</span>
                             <div></div>
                         </button>
@@ -178,17 +178,17 @@
                     <span class="ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.1s">6</span>
                 </div>
                 <div class="answerbg">
-                    <div class="answer answer6">
+                    <div class="answer answer6 one" id="yusuan">
                         <button>A&nbsp;&nbsp;&nbsp;<span>1万以下</span>
                             <div></div>
                         </button>
                         <button>B&nbsp;&nbsp;&nbsp;<span>1~3万</span>
                             <div></div>
                         </button>
-                        <button>C&nbsp;&nbsp;&nbsp;<span>3~5</span>
+                        <button>C&nbsp;&nbsp;&nbsp;<span>3~5万</span>
                             <div></div>
                         </button>
-                        <button>D&nbsp;&nbsp;&nbsp;<span>5~10</span>
+                        <button>D&nbsp;&nbsp;&nbsp;<span>5~10万</span>
                             <div></div>
                         </button>
                     </div>
@@ -202,7 +202,7 @@
                     <span class="ani" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0.1s">7</span>
                 </div>
                 <div class="answerbg">
-                    <div class="answer answer7">
+                    <div class="answer answer7 one" id="howmuch">
                         <button>A&nbsp;&nbsp;&nbsp;<span>半个月内</span>
                             <div></div>
                         </button>
@@ -227,7 +227,7 @@
                     <span class="ani" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0.1s">8</span>
                 </div>
                 <div class="answerbg">
-                    <div class="answer answer8" id="answer8">
+                    <div class="answer answer8 one" id="fengge">
                         <div>
                             <button>A&nbsp;&nbsp;&nbsp;<span>欧美时尚</span>
                                 <div></div>
@@ -252,7 +252,7 @@
                 <img src="images/9huoqu.png" alt="" class="huoqu ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0">
                 <div class="que9"><span class="ani" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0.1s">9</span></div>
                 <div class="answerbg">
-                    <div class="answer answer9">
+                    <div class="answer answer9 one" id="name">
                         <input type="text" class="name" placeholder="输入您的姓名">
                         <button id="save">获取签购单</button>
                     </div>
@@ -261,7 +261,7 @@
             </div>
             <!-- 第十页 -->
             <div class="swiper-slide re">
-                <img src="images/result_lv.png" alt="">
+                <!-- <img src="images/result_lv.png" alt=""> -->
                 <span class="result"></span>
                 <button>保存图片</button>
             </div>

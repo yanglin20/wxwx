@@ -6,7 +6,6 @@
     font-family: qianming;
     src:url('../font/叶根友刀锋黑草1.01_0.TTF')
 }
-
 html, body {
     position: relative;
     height: 100%;
@@ -67,6 +66,16 @@ body {
     background-image: url(../images/bg.png);
     background-size: 100% 100%;
 }
+.answerbg{
+    width: 6.7rem;
+    height:7.1rem;
+    background: url(../images/answer_bg.png) no-repeat center;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -3.35rem;
+    top:3.84rem;
+}
 .que{
     width:6.4rem;
     height:1.58rem;
@@ -123,29 +132,19 @@ body {
     right: 0.6rem;
     top: 0.4rem;
 }
-.answerbg{
-    width: 6.7rem;
-    height:7.1rem;
-    background: url(../images/answer_bg.png) no-repeat center;
-    background-size: 100% 100%;
-    position: absolute;
-    left: 50%;
-    margin-left: -3.35rem;
-    top:3.84rem;
-}
+
 .answerbg .answer{
     text-align: center; 
     margin-top: 1.6rem;
 }
 .answerbg .answer button{
+    position: relative;
     font-family: haibao;
     display: block;
-    margin: 0 auto;
     width: 4.95rem;
     height:0.83rem;
     background: url(../images/btn_bg.png) no-repeat center;
     background-size: 100% 100%;
-    margin-bottom: 0.3rem;
     color: #fff;
     font-size: 0.3rem;
     -webkit-text-shadow:#000 2px 0 0,#000 0 2px 0,#000 -2px 0 0,#000 0 -2px 0;  
@@ -153,9 +152,13 @@ body {
     text-shadow:#000 2px 0 0,#000 0 2px 0,#000 -2px 0 0,#000 0 -2px 0;   
     *filter: Glow(Color=#000, Strength=2);     
 }
-button{
-    position: relative;
+.one button{
+    margin:0 auto 0.45rem auto; 
 }
+.two button{
+    margin:0 auto 0.3rem auto; 
+}
+
 button div{
     width: 100%;
     height: 0.85rem;
@@ -406,33 +409,32 @@ button div{
         transform: translateX(0rem);
     }
 }
-#answer8>div{
+#fengge>div{
     width: 3.02rem;
     height: 5.17rem;
     position: absolute;
     top:1.5rem;
     left:0.7rem;
 }
-#answer8 button{
+#fengge button{
     width: 3.02rem;
     height:0.83rem;
     background: url(../images/8_btn.png) no-repeat center;
     background-size: 100% 100%;
-    margin-bottom: 0.45rem;
 }
-#answer8 img{
+#fengge img{
     position: absolute;
     top: 1.2rem;
     left: 3.8rem;
     width: 2.23rem;
     height: 5.17rem;
 }
-
-.re img{
-    
-    width: 100%;
-    height: 100%；
+.re{
+    position: relative;
+    background: url(../images/result_lv.png);
+    background-size: 100% 100%;
 }
+
 .re .result{
     position: absolute;
     left:5.8rem;

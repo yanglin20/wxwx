@@ -16,57 +16,53 @@ $(function() {
         }, 500)
     })
 
-
-    var answers = {
-        'age': '',
-        'sex': '',
-        'chuxing': '',
-        'changsuo': [],
-        'qudao':[],
-        'yusuan':'',
-        'duoshanqian':'',
-        'style':'',
-        'name':''
-    };
-
-    // $('.answer button').attr('flag',false);
-    $('.answer button').click(function() {
+    var answers={};
+    //单选题点击
+    $('.one button').click(function() {
         if ($(this).children('div').css('display') == 'none') {
             $(this).children('div').show();
         } else {
             $(this).children('div').hide();
         }
-
-        if ($(this).siblings().length < 4) { //单选
-            $(this).siblings().children('div').hide();
+        var index=$(this).parent().attr("id");
+        answers[index]=$(this).children('div:visible').parent().children('span').text();
+        console.log(answers);
+        setTimeout(function() {
+            myswiper.slideNext();
+        }, 600)
+    });
+    var arr1=[];
+    var arr2=[];
+    //多选题点击
+    $('#changsuo button').click(function(){
+        $(this).children('div').show();
+        var index=$(this).parent().attr("id");
+        if($(this).children('div:visible')){
+            arr1.push($(this).children('span').text())
+        }
+        answers[index]=arr1;
+        if(arr1.length>1){
             setTimeout(function() {
                 myswiper.slideNext();
-            }, 500)
+            }, 1000)
         }
-
-  
-
     });
-    
+    $('#qudao button').click(function(){
+        $(this).children('div').show();
+        var index=$(this).parent().attr("id");
+        if($(this).children('div:visible')){
+            arr2.push($(this).children('span').text())
+        }
+        answers[index]=arr2;
+        if(arr2.length>1){
+            setTimeout(function() {
+                myswiper.slideNext();
+            }, 1000)
+        }
+    });
     $('#save').click(function(){
-        answers.changsuo=[];//清空数组
-    	answers.qudao=[];
-    	answers.age=$('.answer1 button div:visible').parent().children('span').text();
-    	answers.sex=$('.answer2 button div:visible').parent().children('span').text();
-        answers.chuxing=$('.answer3 button div:visible').parent().children('span').text();
-        $('.answer4 button div:visible').each(function(index, el) {
-            answers.changsuo.push($(this).parent().children('span').text())
-        });
-        $('.answer5 button div:visible').each(function(index, el) {
-            answers.qudao.push($(this).parent().children('span').text())
-        });
-        answers.yusuan=$('.answer6 button div:visible').parent().children('span').text();
-        answers.duoshanqian=$('.answer7 button div:visible').parent().children('span').text();
-        answers.style=$('.answer8 button div:visible').parent().children('span').text();
-    	answers.name=$('.answer9 input').val();
-
+        answers.name=$('.answer9 input').val();
         console.log(answers);
-        console.log(answers.name);
         $(".result").html(answers.name);
     })
     
