@@ -13,7 +13,7 @@ $(function() {
     $('.up').click(function(){
         setTimeout(function() {
             myswiper.slideNext();
-        }, 500)
+        }, 500);
     })
 
     var answers={};
