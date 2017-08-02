@@ -48,20 +48,23 @@
             var mainCtx = document.getElementById("canvas").getContext("2d");
             var maxWidth = document.body.clientWidth;
             var maxHeight = document.body.clientHeight;
-            document.getElementById("canvas").width = 1500;
-            document.getElementById("canvas").height = 2400;
-            mainCtx.clearRect(0, 0, 750, 1208);
+            document.getElementById("canvas").width = window.innerWidth*2;
+            document.getElementById("canvas").height = window.innerHeight*2;
+            // mainCtx.clearRect(0, 0, 750, 1206);
             //获取图片的实际路径
             var starImg = new Image();
             starImg.src = $('#resultImg').attr('src');
             //合成
             var x = (maxWidth / 750) * 500, y = (maxHeight / 1206) * 1120;
-            
             starImg.onload = function () {
-                mainCtx.drawImage(starImg, 0, 0, 750, 1206);
-                mainCtx.font = "0.24rem qianming";
+                mainCtx.width=maxWidth;
+                mainCtx.height=maxHeight;
+                mainCtx.width=window.innerWidth;
+                mainCtx.height=window.innerHeight;
+                mainCtx.drawImage(starImg, 0, 0);
+                mainCtx.font = "32px qianming";
                 mainCtx.fillStyle = "red";
-                mainCtx.fillText('哈哈',580, 1130);
+                mainCtx.fillText('哈哈', 580, 1130);
             };
             $('#saveImage').click(function () {
                 var myCanvas = document.getElementById("canvas");
@@ -79,9 +82,10 @@
             <!-- 第一页 -->
             <div class="swiper-slide re">
                 <div style="display:none">
+                    <!-- <img src="images/result/aaa.png" alt="" id="resultImg"> -->
                     <img src="images/result/10江诗丹顿.png" alt="" id="resultImg">
                 </div>
-                <canvas id="canvas" width="1500" height="2400"></canvas>
+                <canvas id="canvas" width="1500" height="2412" style="width:7.5rem;height:12.06rem"></canvas>
                 <button id="saveImage">保存图片</button>
             </div>
         </div>
