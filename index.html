@@ -63,6 +63,11 @@
                 mainCtx.fillStyle = "black";
                 mainCtx.fillText('哈哈', x, y);
             };
+            $('#saveImage').click(function () {
+                var myCanvas = document.getElementById("canvas");
+                var image = myCanvas.toDataURL("image/jpg").replace("image/jpg", "image/octet-stream");
+                window.location.href = image;
+            })
         })
     </script>
 </head>
