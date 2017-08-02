@@ -16,6 +16,12 @@
     <script src="js/swiper.min.js"></script>
     <script src="js/swiper.animate1.0.2.min.js"></script>
     <script src="js/index.js"></script>
+    <style type="text/css">
+        html,body
+        {
+            height:100%;
+        }
+    </style>
     <!-- Initialize Swiper -->
     <script>
         (function(doc, win) {
@@ -37,6 +43,28 @@
             doc.addEventListener('DOMContentLoaded', recalc, false);
         })(document, window);
     </script>
+    <script>
+        $(function(){
+            var mainCtx = document.getElementById("canvas").getContext("2d");
+            var maxWidth = document.body.clientWidth;
+            var maxHeight = document.body.clientHeight;
+            document.getElementById("canvas").width = 1500;
+            document.getElementById("canvas").height = 2400;
+            mainCtx.clearRect(0, 0, 750, 1208);
+            //获取图片的实际路径
+            var starImg = new Image();
+            starImg.src = $('#resultImg').attr('src');
+            //合成
+            var x = (maxWidth / 750) * 500, y = (maxHeight / 1206) * 1120;
+            
+            starImg.onload = function () {
+                mainCtx.drawImage(starImg, 0, 0, 750, 1206);
+                mainCtx.font = "0.24rem qianming";
+                mainCtx.fillStyle = "black";
+                mainCtx.fillText('哈哈', x, y);
+            };
+        })
+    </script>
 </head>
 
 <body>
@@ -44,231 +72,12 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <!-- 第一页 -->
-            <div class="swiper-slide bg">
-                <div class="que que1">
-                    <img src="images/age_xin.png" alt="">
-                </div>
-                <div class="p"><img src="images/q1.png" alt=""></div>
-                <div class="answerbg">
-                    <div class="answer answer1 one" id="age">
-                        <button>A&nbsp;&nbsp;&nbsp;<span>70后</span>
-                            <div></div>
-                        </button>
-                        <button>B&nbsp;&nbsp;&nbsp;<span>80后</span>
-                            <div></div>
-                        </button>
-                        <button>C&nbsp;&nbsp;&nbsp;<span>90后</span>
-                            <div></div>
-                        </button>
-                        <button>D&nbsp;&nbsp;&nbsp;<span>00后</span>
-                            <div></div>
-                        </button>
-                    </div>
-                </div>
-                <img src="images/icon_up.png" alt="" class="up">
-            </div>
-            <!-- 第二页 -->
-            <div class="swiper-slide bg">
-                <div class="que que2">
-                    <img src="images/2_yun.png" alt="" class="ani" swiper-animate-effect="pulse" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">
-                    <span class="ani" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0.1s">2</span>
-                </div>
-                
-                <div class="answerbg">
-                    <div class="answer answer2 one" id="sex">
-                        <div class="boy">
-                            <img src="images/boy.png" style="margin-left: -0.1rem" class="ani" alt="" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
-                        </div>
-                        <button>A&nbsp;&nbsp;&nbsp;风流倜傥，玉树临风&nbsp;&nbsp;<span>男</span>
-                            <div></div>
-                        </button>
-                        <div class="boy">
-                            <img src="images/girl.png" class="ani" alt="" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.2s">
-                        </div>
-                        <button>B&nbsp;&nbsp;&nbsp; 闭月羞花，成鱼落雁&nbsp;&nbsp;&nbsp;<span>女</span>
-                            <div></div>
-                        </button>
-                    </div>
-                </div>
-                <img src="images/icon_up.png" alt="" class="up">
-            </div>
-            <!-- 第三页 -->
-            <div class="swiper-slide bg">
-                <div class="que3">
-                    <img src="images/3_car.png" alt="" class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="3s" swiper-animate-delay="0">
-                    <span class="ani" alt="" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0.1s">3</span>
-                </div>
-                <div class="answerbg">
-                    <div class="answer answer3 one" id="way">
-                        <button>A&nbsp;&nbsp;&nbsp;<span>公共交通</span>
-                            <div></div>
-                        </button>
-                        <button>B&nbsp;&nbsp;&nbsp;<span>出租车</span>
-                            <div></div>
-                        </button>
-                        <button>C&nbsp;&nbsp;&nbsp;<span>自己开车</span>
-                            <div></div>
-                        </button>
-                        <button>D&nbsp;&nbsp;&nbsp;<span>步行</span>
-                            <div></div>
-                        </button>
-                    </div>
-                </div>
-                <img src="images/icon_up.png" alt="" class="up">
-            </div>
-            <!-- 第四页 -->
-            <div class="swiper-slide bg">
-                <div class="que4">
-                    <img src="images/yun.png" alt="">
-                    <span class="ani" alt="" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0.1s">4</span>
-                </div>
-                <div class="answerbg">
-                    <div class="answer answer4 two" id="changsuo" style="margin-top: 1.2rem">
-                        <button>A&nbsp;&nbsp;&nbsp;<span>宅在家</span>
-                            <div></div>
-                        </button>
-                        <button>B&nbsp;&nbsp;&nbsp;<span>健身房、游泳馆</span>
-                            <div></div>
-                        </button>
-                        <button>C&nbsp;&nbsp;&nbsp;<span>酒吧、KTV</span>
-                            <div></div>
-                        </button>
-                        <button>D&nbsp;&nbsp;&nbsp;<span>购物场所</span>
-                            <div></div>
-                        </button>
-                        <button>E&nbsp;&nbsp;&nbsp;<span>美容院</span>
-                            <div></div>
-                        </button>
-                    </div>
-                </div>
-                <img src="images/icon_up.png" alt="" class="up">
-            </div>
-            <!-- 第五页 -->
-            <div class="swiper-slide bg">
-                <div class="que5">
-                    <img src="images/pill.png" alt="" class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="3s" swiper-animate-delay="0">
-                    <span class="ani" alt="" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0.1s">5</span>
-                </div>
-                <div class="answerbg">
-                    <div class="answer answer5 two" id="qudao" style="margin-top: 1.2rem">
-                        <button>A&nbsp;&nbsp;&nbsp;<span>海淘</span>
-                            <div></div>
-                        </button>
-                        <button>B&nbsp;&nbsp;&nbsp;<span>代购</span>
-                            <div></div>
-                        </button>
-                        <button>C&nbsp;&nbsp;&nbsp;<span>专柜</span>
-                            <div></div>
-                        </button>
-                        <button>D&nbsp;&nbsp;&nbsp;<span>电商平台</span>&nbsp;&nbsp;&nbsp;<em style="font-size: 0.18rem">(某京，某宝)</em>
-                            <div></div>
-                        </button>
-                        <button>E&nbsp;&nbsp;&nbsp;<span>美容院</span>
-                            <div></div>
-                        </button>
-                    </div>
-                </div>
-                <img src="images/icon_up.png" alt="" class="up">
-            </div>
-            <!-- 第六页 -->
-            <div class="swiper-slide bg">
-                <div class="que6">
-                    <img src="images/6_hongbao.png" alt="" class="ani" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0.1s">
-                    <img src="images/6_chaoren.png" alt="" class="ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="2s" swiper-animate-delay="0.3s">
-                    <span class="ani" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0.1s">6</span>
-                </div>
-                <div class="answerbg">
-                    <div class="answer answer6 one" id="yusuan" style="margin-top: 1.2rem">
-                        <button>A&nbsp;&nbsp;&nbsp;<span>1万以下</span>
-                            <div></div>
-                        </button>
-                        <button>B&nbsp;&nbsp;&nbsp;<span>1~3万</span>
-                            <div></div>
-                        </button>
-                        <button>C&nbsp;&nbsp;&nbsp;<span>3~5万</span>
-                            <div></div>
-                        </button>
-                        <button>D&nbsp;&nbsp;&nbsp;<span>5~10万</span>
-                            <div></div>
-                        </button>
-                        <button>D&nbsp;&nbsp;&nbsp;<span>10万以上</span>
-                            <div></div>
-                        </button>
-                    </div>
-                </div>
-                <img src="images/icon_up.png" alt="" class="up">
-            </div>
-            <!-- 第七页 -->
-            <div class="swiper-slide bg">
-                <div class="que7">
-                    <img src="images/yun.png" alt="">
-                    <span class="ani" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0.1s">7</span>
-                </div>
-                <div class="answerbg">
-                    <div class="answer answer7 one" id="howmuch">
-                        <button>A&nbsp;&nbsp;&nbsp;<span>半个月内</span>
-                            <div></div>
-                        </button>
-                        <button>B&nbsp;&nbsp;&nbsp;<span>1个月</span>
-                            <div></div>
-                        </button>
-                        <button>C&nbsp;&nbsp;&nbsp;<span>2个月</span>
-                            <div></div>
-                        </button>
-                        <button>D&nbsp;&nbsp;&nbsp;<span>3个月及以上</span>
-                            <div></div>
-                        </button>
-                    </div>
-                </div>
-                <img src="images/icon_up.png" alt="" class="up">
-            </div>
-            <!-- 第八页 -->
-            <div class="swiper-slide bg">
-                <div class="que8">
-                    <img src="images/8_girl.png" alt="">
-                    <img src="images/8_eye.png" alt="" class="ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.1s">
-                    <span class="ani" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0.1s">8</span>
-                </div>
-                <div class="answerbg">
-                    <div class="answer answer8 one" id="fengge">
-                        <div>
-                            <button>A&nbsp;&nbsp;&nbsp;<span>欧美时尚</span>
-                                <div></div>
-                            </button>
-                            <button>B&nbsp;&nbsp;&nbsp;<span>复古文艺</span>
-                                <div></div>
-                            </button>
-                            <button>C&nbsp;&nbsp;&nbsp;<span>手绘卡通</span>
-                                <div></div>
-                            </button>
-                            <button>D&nbsp;&nbsp;&nbsp;<span>韩式清新</span>
-                                <div></div>
-                            </button>
-                        </div>
-                        <img src="images/8_img.png" alt="">
-                    </div>
-                </div>
-                <img src="images/icon_up.png" alt="" class="up">
-            </div>
-            <!-- 第九页 -->
-            <div class="swiper-slide bg" style="background: url(images/9bg.png);">
-                <img src="images/9_huoqu.png" alt="" class="huoqu ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0">
-                <div class="que9"><span class="ani" swiper-animate-effect="swing" swiper-animate-duration="1s" swiper-animate-delay="0.1s">9</span></div>
-                <div class="answerbg">
-                    <div class="answer answer9 one" id="name">
-                        <input type="text" class="name" placeholder="输入您的姓名">
-                        <button id="save">获取签购单</button>
-                    </div>
-                </div>
-                <img src="images/icon_up.png" alt="" class="up">
-            </div>
-            <!-- 第十页 -->
             <div class="swiper-slide re">
-               <!--  <img src="images/8_img.png" alt="" id="starImg" style="display: none">
-                <canvas id="main" width=223 height=517 style="border:1px solid #d3d3d3;"></canvas> -->
-                <img src="images/result_lv.png" alt="">
-                <span class="result"></span>
-                <button>保存图片</button>
+                <div style="display:none">
+                    <img src="images/result/10江诗丹顿.png" alt="" id="resultImg">
+                </div>
+                <canvas id="canvas" width="1500" height="2400"></canvas>
+                <button id="saveImage">保存图片</button>
             </div>
         </div>
     </div>

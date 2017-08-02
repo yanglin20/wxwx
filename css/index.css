@@ -43,6 +43,7 @@ body {
     font-size: 0.32rem;
 }
 .up {
+    display: none;
     position: absolute;
     width: 0.74rem;
     height:0.6rem;
@@ -159,6 +160,9 @@ button div{
     z-index: 10;
     top: 0rem;
     display: none;
+}
+.on{
+    display: block;
 }
 .que2{
     width:6.61rem;
@@ -354,7 +358,7 @@ button div{
     margin: 0.6rem auto 0.7rem auto;
     width: 4.95rem;
     height:0.86rem;
-    padding-left: 1.5rem;
+    text-align:center;
     border:2px solid #fed70e;
     border-radius: 0.5rem;
     font-size: 0.32rem;
@@ -400,20 +404,21 @@ button div{
         transform: translateX(0rem);
     }
 }
-#fengge>div{
+#fengge{
+    display: inline-block;
     width: 3.02rem;
     height: 5.17rem;
     position: absolute;
     top:1.5rem;
     left:0.7rem;
 }
-#fengge button{
+#answer8 button{
     width: 3.02rem;
     height:0.83rem;
     background: url(../images/8_btn.png) no-repeat center;
     background-size: 100% 100%;
 }
-#fengge img{
+#answer8 img{
     position: absolute;
     top: 1.2rem;
     left: 3.8rem;
@@ -451,10 +456,4 @@ button div{
     border-radius: 0.25rem;
     color: #fff;
     font-size: 0.32rem;
-}
-canvas{
-    position: absolute;
-    top: 0;
-    left: 50%;
-    margin-left: -111px;
 }
